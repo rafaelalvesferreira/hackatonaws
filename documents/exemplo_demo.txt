@@ -1,0 +1,18 @@
+Documento de Exemplo - Agente Bedrock
+
+Este é um documento de exemplo para demonstrar as capacidades do Agente de Documentos Amazon Bedrock.
+
+Funcionalidades:
+- Processamento de documentos PDF e Word
+- Busca vetorial usando FAISS
+- Integração com Amazon Bedrock
+- Interface web com Streamlit
+- API REST com Flask
+
+Casos de Uso:
+- Suporte ao cliente
+- Análise de documentos
+- Base de conhecimento
+- Assistente de pesquisa
+
+O sistema permite fazer perguntas em linguagem natural sobre o conteúdo dos documentos.

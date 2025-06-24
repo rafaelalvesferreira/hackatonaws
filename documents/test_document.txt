@@ -1,0 +1,26 @@
+Amazon Bedrock Document Agent Test Document
+
+This is a test document for the Amazon Bedrock Document Agent system.
+
+Key Features:
+- Document processing with PDF and Word support
+- Vector search using FAISS
+- Amazon Bedrock integration with Claude 3 Sonnet
+- Flask API with Streamlit interface
+- Real-time prompt editing capabilities
+
+Technical Stack:
+- Backend: Flask, Python
+- AI: Amazon Bedrock, Claude 3 Sonnet, Titan Embeddings
+- Vector Store: FAISS
+- Frontend: Streamlit
+- Document Processing: PyPDF2, python-docx
+
+Use Cases:
+- Customer support knowledge base
+- Document analysis and search
+- Technical documentation assistant
+- Contract and legal document review
+- Academic research paper analysis
+
+This system allows users to upload documents and ask questions about their content using natural language queries. The AI agent will search through the documents and provide relevant answers with source citations.

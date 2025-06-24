@@ -1,0 +1,36 @@
+# Políticas da Empresa XYZ
+
+## Política de Recursos Humanos
+
+### Horário de Trabalho
+- Horário padrão: 8h às 17h
+- Intervalo para almoço: 12h às 13h
+- Flexibilidade de 30 minutos na entrada
+
+### Benefícios
+- Vale alimentação: R$ 500,00/mês
+- Vale transporte: Conforme necessidade
+- Plano de saúde: Cobertura nacional
+- Seguro de vida: Valor equivalente a 12 salários
+
+### Política de Férias
+- 30 dias corridos após 12 meses de trabalho
+- Possibilidade de venda de 10 dias
+- Abono de 1/3 do salário
+
+## Política de Segurança da Informação
+
+### Senhas
+- Mínimo de 8 caracteres
+- Combinação de letras, números e símbolos
+- Troca obrigatória a cada 90 dias
+
+### Acesso aos Sistemas
+- Cada funcionário possui login único
+- Acesso baseado no cargo e função
+- Monitoramento de atividades
+
+### Backup de Dados
+- Backup diário automático
+- Cópias armazenadas em local seguro
+- Teste de restauração mensal

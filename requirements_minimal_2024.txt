@@ -1,0 +1,25 @@
+# 🎯 REQUIREMENTS MÍNIMO - 2024
+# ✅ Apenas o essencial para funcionar
+# ⚡ Instalação rápida sem conflitos
+
+# Core
+flask==2.3.3
+flask-cors==4.0.0
+boto3>=1.38.0
+python-dotenv==1.0.0
+requests>=2.32.0
+
+# Documents
+PyPDF2==3.0.1
+python-docx==0.8.11
+
+# LangChain (versões compatíveis)
+langchain>=0.3.26
+langchain-aws>=0.2.27
+langchain-community>=0.3.26
+
+# Vector Store
+faiss-cpu==1.7.4
+
+# Interface (opcional)
+streamlit>=1.46.0

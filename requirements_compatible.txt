@@ -1,0 +1,33 @@
+# Core Flask and API
+flask==2.3.3
+flask-cors==4.0.0
+werkzeug==2.3.7
+
+# AWS SDK
+boto3>=1.34.0
+botocore>=1.34.0
+
+# Document Processing
+PyPDF2==3.0.1
+python-docx==0.8.11
+
+# LangChain - Versões compatíveis
+langchain>=0.2.0
+langchain-aws>=0.1.0
+langchain-community>=0.2.0
+
+# Vector Store
+faiss-cpu==1.7.4
+
+# ML and Embeddings (opcional - instalar depois se necessário)
+# sentence-transformers>=2.2.0
+
+# Basic utilities
+numpy>=1.24.0
+python-dotenv==1.0.0
+requests>=2.31.0
+
+# Web Interface
+streamlit>=1.28.0
+pandas>=2.0.0
+plotly>=5.17.0

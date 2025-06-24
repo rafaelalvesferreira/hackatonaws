@@ -3,8 +3,8 @@ import logging
 from typing import List, Dict
 import PyPDF2
 from docx import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document as LangchainDocument
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_core.documents import Document as LangchainDocument
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

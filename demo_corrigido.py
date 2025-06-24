@@ -209,7 +209,7 @@ def start_demo_servers():
     try:
         streamlit_process = subprocess.Popen([
             sys.executable, "-m", "streamlit", "run", "streamlit_app.py",
-            "--server.port", "8502",
+            "--server.port", "8501",
             "--server.address", "0.0.0.0",
             "--browser.gatherUsageStats", "false",
             "--server.headless", "true"

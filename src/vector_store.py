@@ -3,9 +3,9 @@ import pickle
 import logging
 from typing import List, Dict, Tuple
 import numpy as np
-from langchain.vectorstores import FAISS
-from langchain.embeddings import BedrockEmbeddings
-from langchain.schema import Document
+from langchain_community.vectorstores import FAISS
+from langchain_aws import BedrockEmbeddings
+from langchain_core.documents import Document
 import boto3
 
 logging.basicConfig(level=logging.INFO)

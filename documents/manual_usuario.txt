@@ -1,0 +1,26 @@
+# Manual do Usuário - Sistema de Gestão
+
+## Introdução
+Este manual descreve como utilizar o Sistema de Gestão da empresa.
+
+## Funcionalidades Principais
+1. **Cadastro de Clientes**: Permite registrar novos clientes
+2. **Gestão de Pedidos**: Controla pedidos e entregas
+3. **Relatórios**: Gera relatórios financeiros e operacionais
+
+## Como Usar
+### Login
+1. Acesse o sistema através do navegador
+2. Digite seu usuário e senha
+3. Clique em "Entrar"
+
+### Cadastrar Cliente
+1. Vá para o menu "Clientes"
+2. Clique em "Novo Cliente"
+3. Preencha os dados obrigatórios
+4. Salve as informações
+
+## Suporte
+Para suporte técnico, entre em contato:
+- Email: suporte@empresa.com
+- Telefone: (11) 1234-5678
