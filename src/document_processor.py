@@ -98,6 +98,7 @@ class DocumentProcessor:
             file_extension = os.path.splitext(filename)[1].lower()
             
             if file_extension in supported_extensions and os.path.isfile(file_path):
+                print("File Path:", file_path)
                 documents = self.process_document(file_path)
                 all_documents.extend(documents)
         

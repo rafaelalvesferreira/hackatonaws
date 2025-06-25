@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-App principal que usa credenciais das variáveis de ambiente da AWS CLI
+App principal que usa credenciais das variáveis de ambiente da AWS CLI - VERSÃO CORRIGIDA
 """
 
 import os
@@ -105,7 +105,6 @@ def initialize_components():
         # Vector Store com credenciais explícitas
         logger.info("Inicializando Vector Store...")
         from src.vector_store_aws_cli import VectorStoreAWSCLI
-        print("\nmodel id embeddings:", config.BEDROCK_EMBEDDING_MODEL_ID)
         vector_store = VectorStoreAWSCLI(
             aws_region=config.AWS_REGION,
             embedding_model_id=config.BEDROCK_EMBEDDING_MODEL_ID,
@@ -199,7 +198,7 @@ def get_status():
 
 @app.route('/documents/upload', methods=['POST'])
 def process_documents():
-    """Processa documentos"""
+    """Processa documentos - MÉTODO CORRIGIDO"""
     try:
         if not all([document_processor, vector_store]):
             return jsonify({
@@ -207,9 +206,13 @@ def process_documents():
                 'error': 'Componentes não inicializados'
             }), 500
         
-        # Processar documentos - CORREÇÃO APLICADA
+        # Processar documentos - CORREÇÃO AQUI
         logger.info(f"Processando documentos do diretório: {config.DOCUMENTS_PATH}")
         documents = document_processor.process_documents_directory(config.DOCUMENTS_PATH)  # ✅ CORRIGIDO
+        
+        logger.info(f"Documentos processados: {len(documents)}")
+        for i, doc in enumerate(documents):
+            logger.info(f"  {i+1}. {doc.metadata.get('source', 'N/A')} - {len(doc.page_content)} chars")
         
         # Adicionar ao vector store
         vector_store.add_documents(documents)
@@ -217,11 +220,19 @@ def process_documents():
         return jsonify({
             'success': True,
             'documents_processed': len(documents),
-            'message': f'Processados {len(documents)} documentos com embeddings reais'
+            'message': f'Processados {len(documents)} documentos com embeddings reais',
+            'documents': [
+                {
+                    'source': doc.metadata.get('source', 'N/A'),
+                    'chunks': 1,
+                    'content_preview': doc.page_content[:100] + '...' if len(doc.page_content) > 100 else doc.page_content
+                } for doc in documents[:5]  # Mostrar apenas os primeiros 5
+            ]
         })
         
     except Exception as e:
         logger.error(f"Erro ao processar documentos: {e}")
+        logger.error(f"Traceback: {traceback.format_exc()}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -248,11 +259,17 @@ def chat():
         user_message = data['message']
         max_results = data.get('max_results', config.MAX_SEARCH_RESULTS)
         
+        logger.info(f"Chat request: {user_message}")
+        
         # Buscar documentos relevantes
         relevant_documents = vector_store.similarity_search(
             user_message, 
             k=max_results
         )
+        
+        logger.info(f"Documentos relevantes encontrados: {len(relevant_documents)}")
+        for i, doc in enumerate(relevant_documents):
+            logger.info(f"  {i+1}. {doc.get('metadata', {}).get('source', 'N/A')} - Similaridade: {doc.get('similarity', 0):.3f}")
         
         # Processar com Bedrock
         result = bedrock_agent.process_message(user_message, relevant_documents)
@@ -261,11 +278,13 @@ def chat():
             'success': True,
             'response': result['response'],
             'sources': result.get('sources', []),
-            'metadata': result.get('metadata', {})
+            'metadata': result.get('metadata', {}),
+            'relevant_documents_count': len(relevant_documents)
         })
         
     except Exception as e:
         logger.error(f"Erro no chat: {e}")
+        logger.error(f"Traceback: {traceback.format_exc()}")
         return jsonify({
             'success': False,
             'error': str(e)

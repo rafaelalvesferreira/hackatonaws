@@ -23,7 +23,7 @@ def start_api():
     print("🚀 Iniciando API Flask...")
     subprocess.Popen([
         sys.executable, "run.py"
-    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    ])#, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     
     # Aguarda API inicializar
     print("⏳ Aguardando API inicializar...")

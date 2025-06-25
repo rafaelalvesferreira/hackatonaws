@@ -148,7 +148,7 @@ def process_documents():
             }), 500
         
         # Processar documentos
-        documents = document_processor.process_directory(config.DOCUMENTS_PATH)
+        documents = document_processor.process_documents_directory(config.DOCUMENTS_PATH)
         
         if bedrock_available and vector_store:
             # Modo Bedrock - processamento real
