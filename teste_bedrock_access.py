@@ -75,7 +75,7 @@ def test_bedrock_access():
         
         # Testar embedding com Titan
         response = bedrock_runtime.invoke_model(
-            modelId='amazon.titan-embed-text-v1',
+            modelId='amazon.titan-embed-text-v2:0',
             body='{"inputText": "teste"}'
         )
         print(f"   ✅ Embeddings funcionando")

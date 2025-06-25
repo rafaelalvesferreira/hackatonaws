@@ -10,7 +10,7 @@ import logging
 # Adiciona o diretório raiz ao path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from src.app import app, initialize_components, config
+from src.app_aws_cli import app, initialize_components, config
 
 def main():
     """Função principal"""
